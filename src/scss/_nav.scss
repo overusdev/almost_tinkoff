@@ -74,11 +74,15 @@
     }
 
     &__top-right {
+        position: relative;
         display: flex;
         align-items: center;
         cursor: pointer;
         &:hover .g_nav__top-acc_name{
             color: $color_gefault_hover;
+        }
+        &:hover .g_nav__top-right-popup{
+            display: block;
         }
     }
     &__top-acc_name {
@@ -96,6 +100,61 @@
     &__top-acc_icon {
         width: 32px;
         height: 32px;
+    }
+
+    &__top-right-popup {
+        display: none;
+        position: absolute;
+        width: 290px;
+        bottom: -192px;
+        right: 0;
+        overflow: hidden;
+        border: 1px solid #e7e8ea;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px -4px rgba(0,0,0,.2);
+        background-color: #fff;
+        z-index: 9;
+        @include desktop-1024 {
+            width: 360px;
+        }
+    }
+
+    &__top-right-popup-content {
+        padding: 20px 24px;
+        background-color: #fff;
+    }
+    &__top-right-popup-acc-name {
+        margin: 0;
+        font-size: 15px;
+        line-height: 24px;
+    }
+    &__top-right-popup-acc-link {
+        font-size: 13px;
+        line-height: 20px
+    }
+
+    &__top-right-popup-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: -1px;
+        padding: 17px 14px 14px 24px;
+        background-color: #f5f5f6;
+        cursor: pointer;
+        color: #959ba4;
+    }
+
+    &__top-right-popup-footer-logout-link {
+        color: $color_gefault;
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &__top-right-popup-footer-logout-icon {
+        width: 24px;
+        height: 24px;
+        fill: $color_gefault;
     }
 
     &__middle {
