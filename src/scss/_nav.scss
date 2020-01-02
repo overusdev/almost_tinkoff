@@ -8,10 +8,6 @@
         line-height: 48px;
         background-color: #616871;
     }
-
-    &__bottom {
-        box-shadow: 0 10px 16px -6px rgba(0,0,0,.08);
-    }
     &__logo-block {
         @include desktop-1024 {
             display: flex;
@@ -60,7 +56,7 @@
 
     &__top-left-link {
         font-size: $nav_font_size;
-        color: $color_gefault;
+        color: rgba(255,255,255,.56);
         text-transform: uppercase;
         margin-right: 24px;
         text-decoration: none;
@@ -131,6 +127,134 @@
                 color: #000000;
             }
         }
+    }
+
+    &__bottom {
+        height: 48px;
+        line-height: 48px;
+        overflow-x: scroll;
+        background-color: #ffffff;
+        box-shadow: 0 10px 16px -6px rgba(0,0,0,.08);
+        @include desktop-1024 {
+            overflow-x: unset;
+        }
+
+    }
+
+    &__bottom-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__bottom-left-link {
+        position: relative;
+        font-size: 13px;
+        color: $color_gefault;
+        margin-right: 24px;
+        text-decoration: none;
+
+        &:hover {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        &:hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            height: 2px;
+            left: 0;
+            width: 100%;
+            background-color: $color_gefault;
+        }
+
+        &_state {
+            &_active {
+                position: relative;
+                color: #000000;
+            }
+            &_desktop-hidden {
+                display: block;
+                min-width: 100px;
+                @include desktop-1024 {
+                    display: none;
+                }
+            }
+            &_active::after {
+                content: '';
+                position: absolute;
+                bottom: 0px;
+                height: 2px;
+                left: 0;
+                width: 100%;
+                background-color: #ffdd2d;
+            }
+        }
+    }
+
+    &__bottom-right {
+        display: none;
+        position: relative;
+        align-items: center;
+        cursor: pointer;
+        text-decoration: none;
+        &:hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            height: 2px;
+            left: 0;
+            width: 100%;
+            background-color: $color_gefault;
+        }
+        &:hover .g_nav__bottom-all-products{
+            color: #000000;
+            text-decoration: none;
+        }
+        &:hover .g_nav__bottom-all-products-icon{
+            fill: #000000;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+        @include desktop-1024 {
+            display: flex;
+        }
+
+        &_state {
+            &_active {
+                position: relative;
+                color: #000000;
+            }
+            &_active::after {
+                content: '';
+                position: absolute;
+                bottom: 0px;
+                height: 2px;
+                left: 0;
+                width: 100%;
+                background-color: #ffdd2d;
+            }
+        }
+
+    }
+
+    &__bottom-all-products {
+        font-size: 13px;
+        color: $color_gefault;
+        margin-right: 8px;
+        text-decoration: none;
+    }
+
+    &__bottom-all-products-icon {
+        width: 32px;
+        height: 32px;
+        fill: $color_gefault;
+    }
+
+    &__bottom-left-links {
+        display: flex;
     }
 
     &__logout-icon {
