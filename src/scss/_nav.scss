@@ -9,11 +9,6 @@
         background-color: #616871;
     }
 
-    &__middle {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
     &__bottom {
         box-shadow: 0 10px 16px -6px rgba(0,0,0,.08);
     }
@@ -106,6 +101,38 @@
         width: 32px;
         height: 32px;
     }
+
+    &__middle {
+        height: 48px;
+        line-height: 48px;
+        overflow-x: scroll;
+        padding-left: 16px;
+        padding-right: 16px;
+        background-color: #ffffff;
+        box-shadow: inset 0 -1px 0 0 #e7e8ea;
+        @include desktop-1024 {
+            display: none;
+        }
+    }
+
+    &__middle-left-links {
+        display: flex;
+    }
+
+    &__middle-left-link {
+        font-size: $nav_font_size;
+        color: #959ba4;
+        text-transform: uppercase;
+        margin-right: 24px;
+        text-decoration: none;
+
+        &_state {
+            &_active {
+                color: #000000;
+            }
+        }
+    }
+
     &__logout-icon {
         background: url(../img/header__logout-icon.png) no-repeat;
         width: 22px;
